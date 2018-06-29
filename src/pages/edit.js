@@ -3,12 +3,13 @@ import {Link} from "react-router-dom";
 import Download from "../blocks/download/download";
 import Paginator from "../blocks/paginator/paginator";
 import Table from "../blocks/table/table";
+import Chartist from "../blocks/chartist/chartist";
 
 class Edit extends Component {
 	render() {
 		return (
 			<div>
-				<Link to="/" className="back">
+				<Link to="/list" className="back">
 					<span className="icon icon_back"></span>
 					<span className="back__text">Back</span>
 				</Link>
@@ -68,7 +69,7 @@ class Edit extends Component {
 					</tbody>
 				</table>
 				<Download/>
-				<Table/>
+				<Chartist/>
 				<Paginator/>
 			</div>
 

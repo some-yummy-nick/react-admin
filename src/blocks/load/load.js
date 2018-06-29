@@ -28,6 +28,7 @@ class Load extends Component {
 		Array.prototype.forEach.call(fileItem, function (child) {
 			var input = child.querySelector(".js-file");
 			var imageName = child.querySelector(".js-file-name");
+			var deleteItem = child.querySelector(".js-file-delete");
 
 			input.addEventListener('change', function () {
 				if (input.files && input.files[0]) {
@@ -41,6 +42,9 @@ class Load extends Component {
 				} else console.log('not isset files data or files API not supordet');
 			});
 
+			deleteItem.addEventListener("click", function () {
+				$(deleteItem).parents(".js-item").remove();
+			})
 
 		});
 	};
