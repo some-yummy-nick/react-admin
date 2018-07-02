@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {Link} from "react-router-dom";
-import Download from "../blocks/download/download";
-import Paginator from "../blocks/paginator/paginator";
-import Chartist from "../blocks/chartist/chartist";
+import {Link} from 'react-router-dom';
+import Download from '../blocks/download/download';
+import Paginator from '../blocks/paginator/paginator';
+import Chartist from '../blocks/chartist/chartist';
 
 class Edit extends Component {
 	render() {

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Load from "../blocks/load/load";
+import Load from '../blocks/load/load';
 class Promo extends Component {
 	render() {
 		return (

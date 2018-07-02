@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Paginator from "../blocks/paginator/paginator";
-import Chartist from "../blocks/chartist/chartist";
+import Paginator from '../blocks/paginator/paginator';
+import Chartist from '../blocks/chartist/chartist';
 
 class Home extends Component {
 	render() {

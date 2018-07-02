@@ -270,3 +270,43 @@ textarea {
         background: rgba(255, 255, 255, 0.8); }
       .set__button.active::after {
         width: 90%; }
+
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+  border-spacing: 0 5px;
+  border-collapse: separate; }
+  .table__head {
+    text-align: center;
+    border: 1px solid #000;
+    border-right: none; }
+    .table__head:last-child {
+      border-right: 1px solid #000; }
+    .table__head_accent {
+      background: #9e9e9e;
+      color: #ffffff; }
+  .table__head + .table__empty {
+    border-left: 1px solid #000; }
+  .table__empty {
+    border: none; }
+    .table__empty:last-child {
+      border-right: none; }
+  .table__small {
+    padding: 10px 5px; }
+  .table__big {
+    padding: 20px 5px; }
+  .table__value {
+    background: #9e9e9e;
+    color: #ffffff;
+    border: 1px solid #000;
+    border-right: none; }
+    .table__value:last-child {
+      border-right: 1px solid #000; }
+  .table__prop {
+    position: relative;
+    border: 1px solid #000;
+    border-right: none;
+    padding: 30px 5px; }
+  .table__prop + .table__empty {
+    border-left: 1px solid #000; }

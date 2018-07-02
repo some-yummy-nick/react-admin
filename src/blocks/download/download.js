@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../../blocks/download/download.css';
+
 class Download extends Component {
 	render() {
 		return (

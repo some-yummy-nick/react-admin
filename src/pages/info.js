@@ -1,21 +1,21 @@
 import React, {Component} from 'react';
-import { Link } from "react-router-dom";
-import Download from "../blocks/download/download";
-import Paginator from "../blocks/paginator/paginator";
+import { Link } from 'react-router-dom';
+import Download from '../blocks/download/download';
+import Paginator from '../blocks/paginator/paginator';
 
 class Info extends Component {
 	render() {
 		return (
 			<div>
 				<Link to="/edit" className="back">
-					<span className="icon icon_back"></span>
+					<span className="icon icon_back"/>
 					<span className="back__text">Back</span>
 				</Link>
 				<Download/>
 				<table className="table">
 					<tbody>
 					<tr>
-						<th className="table__head table__empty"></th>
+						<th className="table__head table__empty"/>
 						<th className="table__head table__big table__head_accent">ID</th>
 						<th className="table__head table__big table__head_accent">Source</th>
 						<th className="table__head table__big table__head_accent">Transactions</th>

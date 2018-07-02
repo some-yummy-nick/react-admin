@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import ChartistGraph from 'react-chartist';
-import "chartist/dist/chartist.min.css";
-import "chartist/dist/chartist.min.js";
-import Download from "../../blocks/download/download";
-import numbers from "../../numbers.json";
-import DayLine from "../../blocks/dayLine";
-import "../../blocks/table/table.css";
+import 'chartist/dist/chartist.min.css';
+import 'chartist/dist/chartist.min.js';
+import Download from '../../blocks/download/download';
+import numbers from '../../numbers.json';
+import DayLine from '../../blocks/dayLine';
 
 var data = {
 	series: [{data: []}
@@ -22,7 +21,7 @@ var options = {
 	fullWidth: true,
 };
 
-var type = "Line";
+var type = 'Line';
 
 const numbersLine = numbers.map((number, index) => {
 	return (<DayLine number={number} key={index}/>);
@@ -33,7 +32,7 @@ class Chartist extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			selected: "TotalUniqueUser",
+			selected: 'TotalUniqueUser',
 			data: data,
 			numbers: numbers
 		};

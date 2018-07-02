@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import "../../blocks/load/load.css"
-import ContentEditable from 'react-contenteditable'
+import '../../blocks/load/load.css';
+import ContentEditable from 'react-contenteditable';
 
 class AppComponent extends Component {
 	state = {
 		numChildren: 0,
-		htmlInner: "Banner #1"
+		htmlInner: 'Banner #1'
 	};
 
 	addChild = () => {
@@ -17,8 +17,8 @@ class AppComponent extends Component {
 
 	newName = (input) => {
 		var currentItem = input.parentNode.parentNode.parentNode.parentNode;
-		var currentName=currentItem.querySelector(".js-file-name");
-		currentName.innerHTML= input.files[0].name;
+		var currentName = currentItem.querySelector('.js-file-name');
+		currentName.innerHTML = input.files[0].name;
 	};
 
 	loadImage = (e) => {
@@ -44,7 +44,8 @@ class AppComponent extends Component {
 		const children = [];
 
 		for (var i = 0; i < this.state.numChildren; i += 1) {
-			children.push(<ChildComponent loadImage={this.loadImage}  deleteItem={this.deleteItem} htmlInner={this.state.htmlInner} key={i}
+			children.push(<ChildComponent loadImage={this.loadImage} deleteItem={this.deleteItem}
+			                              htmlInner={this.state.htmlInner} key={i}
 			                              number={i}/>);
 		}
 

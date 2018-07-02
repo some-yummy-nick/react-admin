@@ -1,12 +1,12 @@
-import React from "react";
-import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+import React from 'react';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import '../styles/reboot.css';
 import '../styles/style.css';
-import Home from "../pages/home";
-import List from "../pages/list";
-import Edit from "../pages/edit";
-import Info from "../pages/info";
-import Promo from "../pages/promo";
+import Home from '../pages/home';
+import List from '../pages/list';
+import Edit from '../pages/edit';
+import Info from '../pages/info';
+import Promo from '../pages/promo';
 
 const MainLayout = () => (
 	<Router>
@@ -19,7 +19,7 @@ const MainLayout = () => (
 								<div className="logo">
 									<Link className="logo__link" to="/" title="Перейти на главную страницу">
 										<img className="logo__pic" src="../images/logo.svg"
-										     alt="Перейти на главную страницу"></img>
+										     alt="Перейти на главную страницу"/>
 									</Link>
 								</div>
 							</div>
@@ -42,7 +42,7 @@ const MainLayout = () => (
 							</div>
 							<div className="header__block">
 								<button type="button" className="logout">
-									<span className="icon icon_logout"></span>
+									<span className="icon icon_logout"/>
 									<span className="logout__text">Exit</span>
 								</button>
 							</div>

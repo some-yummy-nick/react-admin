@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 class TableList extends Component {
 	render() {
@@ -91,8 +91,8 @@ class TableList extends Component {
 							<span className="icon icon_edit"/>
 							<span className="table__text">Edit</span>
 						</Link>
-						1650
 					</td>
+					<td className="table__prop table__big">1650</td>
 					<td className="table__prop table__big">21355</td>
 					<td className="table__prop table__big">14</td>
 					<td className="table__prop table__big">24</td>

@@ -6,7 +6,7 @@ class Search extends Component {
 		return (
 			<div className="search">
 				<form className="search__form">
-					<input type="text" className="search__input"></input>
+					<input type="text" className="search__input"/>
 					<button className="btn btn_border" type="submit">Find Webmaster</button>
 				</form>
 
