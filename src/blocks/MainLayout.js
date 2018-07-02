@@ -18,7 +18,7 @@ const MainLayout = () => (
 							<div className="header__block">
 								<div className="logo">
 									<Link className="logo__link" to="/" title="Перейти на главную страницу">
-										<img className="logo__pic" src="images/logo.svg"
+										<img className="logo__pic" src="../images/logo.svg"
 										     alt="Перейти на главную страницу"></img>
 									</Link>
 								</div>
@@ -41,10 +41,10 @@ const MainLayout = () => (
 								</div>
 							</div>
 							<div className="header__block">
-								<a href="#" className="logout">
+								<button type="button" className="logout">
 									<span className="icon icon_logout"></span>
 									<span className="logout__text">Exit</span>
-								</a>
+								</button>
 							</div>
 						</div>
 					</div>

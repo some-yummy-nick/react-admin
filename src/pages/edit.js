@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import Download from "../blocks/download/download";
 import Paginator from "../blocks/paginator/paginator";
-import Table from "../blocks/table/table";
 import Chartist from "../blocks/chartist/chartist";
 
 class Edit extends Component {
@@ -10,7 +9,7 @@ class Edit extends Component {
 		return (
 			<div>
 				<Link to="/list" className="back">
-					<span className="icon icon_back"></span>
+					<span className="icon icon_back"/>
 					<span className="back__text">Back</span>
 				</Link>
 				<table className="table">
@@ -26,21 +25,21 @@ class Edit extends Component {
 						<th className="table__head table__big table__head_accent">Balance</th>
 						<th className="table__head table__big table__head_accent">Revenue Share</th>
 						<th className="table__head table__big table__head_accent">Label</th>
-						<th className="table__head table__empty"></th>
+						<th className="table__head table__empty"/>
 					</tr>
 
 					<tr>
 						<td className="table__prop table__big">#100</td>
 						<td className="table__prop table__big">mail@amil.ri
 							<Link to="edit" className="edit">
-								<span className="icon icon_edit"></span>
+								<span className="icon icon_edit"/>
 								<span className="table__text">Edit</span>
 							</Link>
 						</td>
 						<td className="table__prop table__big">
 							1650
 							<Link to="info" className="edit">
-								<span className="icon icon_edit"></span>
+								<span className="icon icon_edit"/>
 								<span className="table__text">Info</span>
 							</Link>
 						</td>
@@ -51,13 +50,13 @@ class Edit extends Component {
 						<td className="table__prop table__big">4</td>
 						<td className="table__prop table__big">0.25%
 							<Link to="edit" className="edit">
-								<span className="icon icon_edit"></span>
+								<span className="icon icon_edit"/>
 								<span className="table__text">Edit</span>
 							</Link>
 						</td>
 						<td className="table__prop table__big">BestChange
 							<Link to="edit" className="edit">
-								<span className="icon icon_edit"></span>
+								<span className="icon icon_edit"/>
 								<span className="table__text">Edit</span>
 							</Link>
 						</td>

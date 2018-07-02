@@ -3,10 +3,10 @@ import '../../blocks/download/download.css';
 class Download extends Component {
 	render() {
 		return (
-			<a href="#" className="download">
-				<span className="icon icon_download"></span>
+			<button type="button" className="download">
+				<span className="icon icon_download"/>
 				<span className="download__text">Save as Excel file</span>
-			</a>
+			</button>
 
 		);
 	}

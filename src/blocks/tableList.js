@@ -18,14 +18,14 @@ class TableList extends Component {
 					<th className="table__head table__big table__head_accent">Balance</th>
 					<th className="table__head table__big table__head_accent">Revenue Share</th>
 					<th className="table__head table__big table__head_accent">Label</th>
-					<th className="table__head table__empty"></th>
+					<th className="table__head table__empty"/>
 				</tr>
 
 				<tr>
 					<td className="table__prop table__big">#100</td>
 					<td className="table__prop table__big">mail@amil.ri
 						<Link to="edit" className="edit">
-							<span className="icon icon_edit"></span>
+							<span className="icon icon_edit"/>
 							<span className="table__text">Edit</span>
 						</Link>
 					</td>
@@ -46,7 +46,7 @@ class TableList extends Component {
 					<td className="table__prop table__big">#99</td>
 					<td className="table__prop table__big">mail@amil.ri
 						<Link to="edit" className="edit">
-							<span className="icon icon_edit"></span>
+							<span className="icon icon_edit"/>
 							<span className="table__text">Edit</span>
 						</Link>
 					</td>
@@ -67,7 +67,7 @@ class TableList extends Component {
 					<td className="table__prop table__big">#98</td>
 					<td className="table__prop table__big">mail@amil.ri
 						<Link to="edit" className="edit">
-							<span className="icon icon_edit"></span>
+							<span className="icon icon_edit"/>
 							<span className="table__text">Edit</span>
 						</Link>
 					</td>
@@ -88,11 +88,11 @@ class TableList extends Component {
 					<td className="table__prop table__big">#97</td>
 					<td className="table__prop table__big">mail@amil.ri
 						<Link to="edit" className="edit">
-							<span className="icon icon_edit"></span>
+							<span className="icon icon_edit"/>
 							<span className="table__text">Edit</span>
 						</Link>
+						1650
 					</td>
-					<td className="table__prop table__big">1650</td>
 					<td className="table__prop table__big">21355</td>
 					<td className="table__prop table__big">14</td>
 					<td className="table__prop table__big">24</td>
@@ -109,7 +109,7 @@ class TableList extends Component {
 					<td className="table__prop table__big">#96</td>
 					<td className="table__prop table__big">mail@amil.ri
 						<Link to="edit" className="edit">
-							<span className="icon icon_edit"></span>
+							<span className="icon icon_edit"/>
 							<span className="table__text">Edit</span>
 						</Link>
 					</td>

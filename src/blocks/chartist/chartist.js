@@ -5,6 +5,7 @@ import "chartist/dist/chartist.min.js";
 import Download from "../../blocks/download/download";
 import numbers from "../../numbers.json";
 import DayLine from "../../blocks/dayLine";
+import "../../blocks/table/table.css";
 
 var data = {
 	series: [{data: []}
