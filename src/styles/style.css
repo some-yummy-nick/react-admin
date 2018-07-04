@@ -154,6 +154,7 @@ textarea {
   .btn:hover {
     color: rgba(0, 0, 0, 0.8); }
   .btn_freeze {
+    display: block;
     background-color: #00bcd4;
     margin-bottom: 5px; }
   .btn_ban {

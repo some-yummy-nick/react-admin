@@ -3,6 +3,10 @@ import {Link} from 'react-router-dom';
 import Download from '../blocks/download/download';
 import Paginator from '../blocks/paginator/paginator';
 import Chartist from '../blocks/chartist/chartist';
+var headers = ["ID", "Email", "Referrals", "Transactions", "Volume", "Total income", "Total withdrawal", "Balance", "Revenue Share", "Label"];
+var data = [
+	[100, "mail@amil.ru", 1650, 21355, 14, 24, 144, 4, "0.25%", "BestChange"]
+];
 
 class Edit extends Component {
 	render() {
@@ -13,61 +17,53 @@ class Edit extends Component {
 					<span className="back__text">Back</span>
 				</Link>
 				<table className="table">
+					<thead>
+					<tr>
+						{headers.map((header, index) => {
+							return <th className="table__head table__big table__head_accent" key={index}>{header}</th>
+						})}
+					</tr>
+					</thead>
 					<tbody>
-					<tr>
-						<th className="table__head table__big table__head_accent">ID</th>
-						<th className="table__head table__big table__head_accent">Email</th>
-						<th className="table__head table__big table__head_accent">Referrals</th>
-						<th className="table__head table__big table__head_accent">Transactions</th>
-						<th className="table__head table__big table__head_accent">Volume</th>
-						<th className="table__head table__big table__head_accent">Total income</th>
-						<th className="table__head table__big table__head_accent">Total withdrawal</th>
-						<th className="table__head table__big table__head_accent">Balance</th>
-						<th className="table__head table__big table__head_accent">Revenue Share</th>
-						<th className="table__head table__big table__head_accent">Label</th>
-						<th className="table__head table__empty"/>
-					</tr>
-
-					<tr>
-						<td className="table__prop table__big">#100</td>
-						<td className="table__prop table__big">mail@amil.ri
+					{data.map((row, rowindex) =>
+						<tr key={rowindex}>
+							{<td className="table__prop table__big">{row[0]}</td>}
+							{<td className="table__prop table__big">{row[1]}
+								<Link to="edit" className="edit">
+									<span className="icon icon_edit"/>
+									<span className="table__text">Edit</span>
+								</Link>
+							</td>}
+							{<td className="table__prop table__big">{row[2]}
+								<Link to="info" className="edit">
+									<span className="icon icon_edit"/>
+									<span className="table__text">Info</span>
+								</Link>
+							</td>}
+							{<td className="table__prop table__big">{row[3]}</td>}
+							{<td className="table__prop table__big">{row[4]}</td>}
+							{<td className="table__prop table__big">{row[5]}</td>}
+							{<td className="table__prop table__big">{row[6]}</td>}
+							{<td className="table__prop table__big">{row[7]}</td>}
+							{<td className="table__prop table__big">{row[8]}
 							<Link to="edit" className="edit">
 								<span className="icon icon_edit"/>
 								<span className="table__text">Edit</span>
 							</Link>
-						</td>
-						<td className="table__prop table__big">
-							1650
-							<Link to="info" className="edit">
-								<span className="icon icon_edit"/>
-								<span className="table__text">Info</span>
-							</Link>
-						</td>
-						<td className="table__prop table__big">21355</td>
-						<td className="table__prop table__big">14</td>
-						<td className="table__prop table__big">24</td>
-						<td className="table__prop table__big">144</td>
-						<td className="table__prop table__big">4</td>
-						<td className="table__prop table__big">0.25%
+							</td>}
+							{<td className="table__prop table__big">{row[9]}
 							<Link to="edit" className="edit">
 								<span className="icon icon_edit"/>
 								<span className="table__text">Edit</span>
 							</Link>
-						</td>
-						<td className="table__prop table__big">BestChange
-							<Link to="edit" className="edit">
-								<span className="icon icon_edit"/>
-								<span className="table__text">Edit</span>
-							</Link>
-						</td>
-						<td className="table__empty">
-							<button type="button" className="btn btn_freeze">Freeze</button>
-							<button type="button" className="btn btn_ban">Ban</button>
-						</td>
-					</tr>
+							</td>}
+							{<td className="table__empty">{row[10]}
+								<button type="button" className="btn btn_freeze">Freeze</button>
+								<button type="button" className="btn btn_ban">Ban</button>
+							</td>}
+						</tr>)}
 					</tbody>
 				</table>
-				<Download/>
 				<Chartist/>
 				<Paginator/>
 			</div>
