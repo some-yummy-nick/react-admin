@@ -281,6 +281,8 @@ textarea {
   .table__wrapper_transactions .table__head {
     min-width: 171.4285714285714px;
     max-width: 171.4285714285714px; }
+  .table__wrapper_info .table__value {
+    width: 150px; }
   .table__head {
     text-align: center;
     border: 1px solid #000;

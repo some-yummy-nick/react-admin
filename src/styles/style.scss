@@ -416,6 +416,16 @@ textarea {
 				}
 			}
 		}
+
+		&_info{
+
+			.table {
+
+				&__value{
+					width: 150px;
+				}
+			}
+		}
 	}
 
 	&__head {
