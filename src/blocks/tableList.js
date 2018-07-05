@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import Download from '../blocks/download/download';
 
-var headers = ["ID", "Email", "Referrals", "Transactions", "Volume", "Total income", "Total withdrawal", "Balance", "Revenue Share", "Label"];
+var headers = ['ID', 'Email', 'Referrals', 'Transactions', 'Volume', 'Total income', 'Total withdrawal', 'Balance', 'Revenue Share', 'Label'];
 var data = [
-	[100, "mail@amil.ru", 1650, 21355, 14, 24, 144, 4, "0.25%", "BestChange"],
-	[99, "tatar@amil.ru", 2890, 1355, 9, 20, 158, 89, "0.29%", "Change"],
-	[98, "look@amil.ru", 156, 550, 90, 59, 78, 12, "0.15%", "Change"]
+	[100, 'mail@amil.ru', 1650, 21355, 14, 24, 144, 4, '0.25%', 'BestChange'],
+	[99, 'tatar@amil.ru', 2890, 1355, 9, 20, 158, 89, '0.29%', 'Change'],
+	[98, 'look@amil.ru', 156, 550, 90, 59, 78, 12, '0.15%', 'Change']
 ];
 
 class Table extends Component {
@@ -21,7 +21,7 @@ class Table extends Component {
 
 	search = (e) => {
 		e.preventDefault();
-		var needle = e.target.querySelector("input").value.toLowerCase();
+		var needle = e.target.querySelector('input').value.toLowerCase();
 		if (!needle) {
 			this.setState({data: this.props.initialData});
 			return;

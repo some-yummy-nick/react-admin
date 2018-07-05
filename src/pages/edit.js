@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import Download from '../blocks/download/download';
 import Paginator from '../blocks/paginator/paginator';
 import Chartist from '../blocks/chartist/chartist';
 var headers = ["ID", "Email", "Referrals", "Transactions", "Volume", "Total income", "Total withdrawal", "Balance", "Revenue Share", "Label"];
