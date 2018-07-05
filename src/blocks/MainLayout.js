@@ -4,6 +4,7 @@ import '../styles/reboot.css';
 import '../styles/style.css';
 import Home from '../pages/home';
 import List from '../pages/list';
+import Transactions from '../pages/transactions';
 import Edit from '../pages/edit';
 import Info from '../pages/info';
 import Promo from '../pages/promo';
@@ -34,6 +35,9 @@ const MainLayout = () => (
 												<Link className="menu__link" to="/list">List of Webmasters</Link>
 											</li>
 											<li className="menu__item">
+												<Link className="menu__link" to="/transactions">List of Transactions</Link>
+											</li>
+											<li className="menu__item">
 												<Link className="menu__link" to="/promo">Load of promo</Link>
 											</li>
 										</ul>
@@ -53,6 +57,7 @@ const MainLayout = () => (
 					<div className="container">
 						<Route exact path="/" component={Home}/>
 						<Route path="/list" component={List}/>
+						<Route path="/transactions" component={Transactions}/>
 						<Route path="/edit" component={Edit}/>
 						<Route path="/info" component={Info}/>
 						<Route path="/promo" component={Promo}/>

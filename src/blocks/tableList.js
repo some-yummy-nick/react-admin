@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import '../blocks/search/search.css';
 import Download from '../blocks/download/download';
 
 var headers = ["ID", "Email", "Referrals", "Transactions", "Volume", "Total income", "Total withdrawal", "Balance", "Revenue Share", "Label"];
@@ -49,7 +48,8 @@ class Table extends Component {
 
 				</div>
 				<Download/>
-				<table className="table">
+				<div className="table__wrapper">
+				<table ref="table" className="table">
 					<thead>
 					<tr>
 						{headers.map((header, index) => {
@@ -59,10 +59,10 @@ class Table extends Component {
 					</thead>
 					<tbody>
 					{this.state.data.map((row, rowindex) =>
-						<tr key={rowindex}>
+						<tr  key={rowindex}>
 							{<td className="table__prop table__big">{row[0]}</td>}
 							{<td className="table__prop table__big">{row[1]}
-								<Link to="edit" className="edit">
+								<Link to="edit" refs={rowindex}  className="edit">
 									<span className="icon icon_edit"/>
 									<span className="table__text">Edit</span>
 								</Link>
@@ -82,6 +82,7 @@ class Table extends Component {
 						</tr>)}
 					</tbody>
 				</table>
+				</div>
 			</div>
 		);
 	}

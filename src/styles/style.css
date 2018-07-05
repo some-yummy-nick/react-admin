@@ -278,6 +278,9 @@ textarea {
   text-align: center;
   border-spacing: 0 5px;
   border-collapse: separate; }
+  .table__wrapper_transactions .table__head {
+    min-width: 171.4285714285714px;
+    max-width: 171.4285714285714px; }
   .table__head {
     text-align: center;
     border: 1px solid #000;
@@ -309,5 +312,15 @@ textarea {
     border: 1px solid #000;
     border-right: none;
     padding: 30px 5px; }
+    .table__prop:last-child {
+      border-right: 1px solid #000; }
   .table__prop + .table__empty {
     border-left: 1px solid #000; }
+
+.search {
+  margin-bottom: 20px;
+  text-align: center; }
+  .search__input {
+    width: 100%;
+    max-width: 306px;
+    padding: 2px 10px; }

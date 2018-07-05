@@ -13,7 +13,7 @@ class Download extends Component {
 					return c[p];
 				})
 			},
-			table = document.querySelector(".table"),
+			table = document.querySelector(".table__wrapper"),
 			name = 'W3C Example Table',
 			tableClone = table.cloneNode(true);
 		var editTable = tableClone.querySelectorAll(".edit");

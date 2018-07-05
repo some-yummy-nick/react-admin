@@ -61,7 +61,7 @@ class Chartist extends Component {
 	};
 
 	setSumm = (filter) => {
-		summ=[];
+		summ = [];
 		Array.prototype.forEach.call(numbers, function (child) {
 
 			summ.push(child[filter]);
@@ -110,33 +110,35 @@ class Chartist extends Component {
 					</div>
 				</div>
 				<Download/>
-				<table className="table">
-					<tbody>
-					<tr>
-						<th className="table__head table__small table__empty"></th>
-						<th className="table__head table__small table__head_accent">{this.setSumm("TotalUniqueUser")}</th>
-						<th className="table__head table__small table__head_accent">{this.setSumm("TotalLeads")}</th>
-						<th className="table__head table__small table__head_accent">{this.setSumm("TotalTrx")}</th>
-						<th className="table__head table__small table__head_accent">{this.setSumm("TotalVolume")}</th>
-						<th className="table__head table__small table__head_accent">{this.setSumm("TotalIncome")}</th>
-						<th className="table__head table__small table__head_accent">{this.setSumm("TotalWebmasters")}</th>
-						<th className="table__head table__small table__head_accent">{this.setSumm("TotalWebmasterIncome")}</th>
-						<th className="table__head table__small table__head_accent">{this.setSumm("TotalNetIncome")}</th>
-					</tr>
-					<tr>
-						<th className="table__head table__small table__empty"></th>
-						<th className="table__head table__small table__head_name">Total Unique User</th>
-						<th className="table__head table__small table__head_name">Total Leads</th>
-						<th className="table__head table__small table__head_name">Total Trx</th>
-						<th className="table__head table__small table__head_name">Total Volume</th>
-						<th className="table__head table__small table__head_name">Total Income</th>
-						<th className="table__head table__small table__head_name">Total Webmasters</th>
-						<th className="table__head table__small table__head_name">Total Webmaster Income</th>
-						<th className="table__head table__small table__head_name">Total Net Income</th>
-					</tr>
-					{numbersLine}
-					</tbody>
-				</table>
+				<div className="table__wrapper">
+					<table className="table">
+						<tbody>
+						<tr>
+							<th className="table__head table__small table__empty"></th>
+							<th className="table__head table__small table__head_accent">{this.setSumm("TotalUniqueUser")}</th>
+							<th className="table__head table__small table__head_accent">{this.setSumm("TotalLeads")}</th>
+							<th className="table__head table__small table__head_accent">{this.setSumm("TotalTrx")}</th>
+							<th className="table__head table__small table__head_accent">{this.setSumm("TotalVolume")}</th>
+							<th className="table__head table__small table__head_accent">{this.setSumm("TotalIncome")}</th>
+							<th className="table__head table__small table__head_accent">{this.setSumm("TotalWebmasters")}</th>
+							<th className="table__head table__small table__head_accent">{this.setSumm("TotalWebmasterIncome")}</th>
+							<th className="table__head table__small table__head_accent">{this.setSumm("TotalNetIncome")}</th>
+						</tr>
+						<tr>
+							<th className="table__head table__small table__empty"></th>
+							<th className="table__head table__small table__head_name">Total Unique User</th>
+							<th className="table__head table__small table__head_name">Total Leads</th>
+							<th className="table__head table__small table__head_name">Total Trx</th>
+							<th className="table__head table__small table__head_name">Total Volume</th>
+							<th className="table__head table__small table__head_name">Total Income</th>
+							<th className="table__head table__small table__head_name">Total Webmasters</th>
+							<th className="table__head table__small table__head_name">Total Webmaster Income</th>
+							<th className="table__head table__small table__head_name">Total Net Income</th>
+						</tr>
+						{numbersLine}
+						</tbody>
+					</table>
+				</div>
 			</div>
 		)
 	}
