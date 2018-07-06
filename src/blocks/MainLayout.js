@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route, NavLink, Switch} from 'react-router-dom';
 import '../styles/reboot.css';
 import '../styles/style.css';
 import Home from '../pages/home';
@@ -8,6 +8,7 @@ import Transactions from '../pages/transactions';
 import Edit from '../pages/edit';
 import Info from '../pages/info';
 import Promo from '../pages/promo';
+import NotFound from '../blocks/notFound';
 
 const MainLayout = () => (
 	<Router>
@@ -18,10 +19,10 @@ const MainLayout = () => (
 						<div className="header__blocks">
 							<div className="header__block">
 								<div className="logo">
-									<Link className="logo__link" to="/" title="Перейти на главную страницу">
+									<NavLink exact className="logo__link" to="/" title="Перейти на главную страницу">
 										<img className="logo__pic" src="../images/logo.svg"
 										     alt="Перейти на главную страницу"/>
-									</Link>
+									</NavLink>
 								</div>
 							</div>
 							<div className="header__block header__block_wide">
@@ -29,16 +30,17 @@ const MainLayout = () => (
 									<nav>
 										<ul className="menu__list">
 											<li className="menu__item">
-												<Link className="menu__link" to="/">Statistics</Link>
+												<NavLink exact className="menu__link" to="/">Statistics</NavLink>
 											</li>
 											<li className="menu__item">
-												<Link className="menu__link" to="/list">List of Webmasters</Link>
+												<NavLink className="menu__link" to="/list">List of Webmasters</NavLink>
 											</li>
 											<li className="menu__item">
-												<Link className="menu__link" to="/transactions">List of Transactions</Link>
+												<NavLink className="menu__link" to="/transactions">List of
+													Transactions</NavLink>
 											</li>
 											<li className="menu__item">
-												<Link className="menu__link" to="/promo">Load of promo</Link>
+												<NavLink className="menu__link" to="/promo">Load of promo</NavLink>
 											</li>
 										</ul>
 									</nav>
@@ -55,12 +57,15 @@ const MainLayout = () => (
 				</header>
 				<main>
 					<div className="container">
-						<Route exact path="/" component={Home}/>
-						<Route path="/list" component={List}/>
-						<Route path="/transactions" component={Transactions}/>
-						<Route path="/edit" component={Edit}/>
-						<Route path="/info" component={Info}/>
-						<Route path="/promo" component={Promo}/>
+						<Switch>
+							<Route exact path="/" component={Home}/>
+							<Route path="/list" component={List}/>
+							<Route path="/transactions" component={Transactions}/>
+							<Route path="/edit" component={Edit}/>
+							<Route path="/info" component={Info}/>
+							<Route path="/promo" component={Promo}/>
+							<Route component={NotFound}/>
+						</Switch>
 					</div>
 				</main>
 			</div>
