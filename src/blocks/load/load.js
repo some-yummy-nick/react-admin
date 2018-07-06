@@ -130,7 +130,7 @@ const ParentComponent = props => (
 			{props.children}
 		</ol>
 		<button className="btn btn_border js-file-add-item" onClick={props.addChild}>
-			<span className="icon icon_down"/>
+			<span className="icon icon_down" aria-hidden="true"/>
 			<span className="btn__text">Add new item</span>
 		</button>
 	</div>

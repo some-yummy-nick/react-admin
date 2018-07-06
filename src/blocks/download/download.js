@@ -32,7 +32,7 @@ class Download extends Component {
 	render() {
 		return (
 			<button type="button" className="download" onClick={this.saveToExcel}>
-				<span className="icon icon_download"/>
+				<span className="icon icon_download" aria-hidden="true"/>
 				<span className="download__text">Save as Excel file</span>
 			</button>
 

@@ -48,7 +48,7 @@ const MainLayout = () => (
 							</div>
 							<div className="header__block">
 								<button type="button" className="logout">
-									<span className="icon icon_logout"/>
+									<span className="icon icon_logout" aria-hidden="true"/>
 									<span className="logout__text">Exit</span>
 								</button>
 							</div>

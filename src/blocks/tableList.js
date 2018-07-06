@@ -63,7 +63,7 @@ class Table extends Component {
 							{<td className="table__prop table__big">{row[0]}</td>}
 							{<td className="table__prop table__big">{row[1]}
 								<Link to="edit" refs={rowindex}  className="edit">
-									<span className="icon icon_edit"/>
+									<span className="icon icon_edit" aria-hidden="true"/>
 									<span className="table__text">Edit</span>
 								</Link>
 							</td>}
