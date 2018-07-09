@@ -1,23 +1,16 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import Download from '../blocks/download/download';
+import {Link} from 'react-router-dom';
+
+import items from '../items.json';
 
 var headers = ['ID', 'Email', 'Referrals', 'Transactions', 'Volume', 'Total income', 'Total withdrawal', 'Balance', 'Revenue Share', 'Label'];
-var data = [
-	[100, 'mail@amil.ru', 1650, 21355, 14, 24, 144, 4, '0.25%', 'BestChange'],
-	[99, 'tatar@amil.ru', 2890, 1355, 9, 20, 158, 89, '0.29%', 'Change'],
-	[98, 'look@amil.ru', 156, 550, 90, 59, 78, 12, '0.15%', 'Change']
-];
 
 class Table extends Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {
-			data: this.props.initialData
-		}
 	}
-
 
 	search = (e) => {
 		e.preventDefault();
@@ -34,6 +27,11 @@ class Table extends Component {
 		this.setState({data: searchdata});
 	};
 
+	clickEdit = (e) => {
+
+		var currentItem = e.currentTarget.getAttribute("data-current");
+		localStorage.setItem('item',currentItem);
+	};
 
 
 	render() {
@@ -49,39 +47,41 @@ class Table extends Component {
 				</div>
 				<Download/>
 				<div className="table__wrapper">
-				<table ref="table" className="table">
-					<thead>
-					<tr>
-						{headers.map((header, index) => {
-							return <th className="table__head table__big table__head_accent" key={index}>{header}</th>
+					<table ref="table" className="table">
+						<thead>
+						<tr>
+							{headers.map((header, index) => {
+								return <th className="table__head table__big table__head_accent"
+								           key={index}>{header}</th>
+							})}
+						</tr>
+						</thead>
+						<tbody>
+						{items.map((item, index) => {
+							return (<tr key={index}>
+								<td className="table__prop table__big">{item.id}</td>
+								<td className="table__prop table__big">{item.email}
+									<Link to="edit" onClick={this.clickEdit} data-current={item.id}  refs={index}  className="edit">
+										<span className="icon icon_edit" aria-hidden="true"/>
+										<span className="table__text">Edit</span>
+									</Link>
+								</td>
+								<td className="table__prop table__big">{item.referrals}</td>
+								<td className="table__prop table__big">{item.transactions}</td>
+								<td className="table__prop table__big">{item.volume}</td>
+								<td className="table__prop table__big">{item.totalIncome}</td>
+								<td className="table__prop table__big">{item.totalWithdrawal}</td>
+								<td className="table__prop table__big">{item.balance}</td>
+								<td className="table__prop table__big">{item.revenueShare}</td>
+								<td className="table__prop table__big">{item.label}</td>
+								<td className="table__empty">
+									<button type="button" className="btn btn_freeze">Freeze</button>
+									<button type="button" className="btn btn_ban">Ban</button>
+								</td>
+							</tr>);
 						})}
-					</tr>
-					</thead>
-					<tbody>
-					{this.state.data.map((row, rowindex) =>
-						<tr  key={rowindex}>
-							{<td className="table__prop table__big">{row[0]}</td>}
-							{<td className="table__prop table__big">{row[1]}
-								<Link to="edit" refs={rowindex}  className="edit">
-									<span className="icon icon_edit" aria-hidden="true"/>
-									<span className="table__text">Edit</span>
-								</Link>
-							</td>}
-							{<td className="table__prop table__big">{row[2]}</td>}
-							{<td className="table__prop table__big">{row[3]}</td>}
-							{<td className="table__prop table__big">{row[4]}</td>}
-							{<td className="table__prop table__big">{row[5]}</td>}
-							{<td className="table__prop table__big">{row[6]}</td>}
-							{<td className="table__prop table__big">{row[7]}</td>}
-							{<td className="table__prop table__big">{row[8]}</td>}
-							{<td className="table__prop table__big">{row[9]}</td>}
-							{<td className="table__empty">{row[10]}
-								<button type="button" className="btn btn_freeze">Freeze</button>
-								<button type="button" className="btn btn_ban">Ban</button>
-							</td>}
-						</tr>)}
-					</tbody>
-				</table>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		);
@@ -89,9 +89,10 @@ class Table extends Component {
 }
 
 class TableList extends Component {
+
 	render() {
 		return (
-			<Table headers={headers} initialData={data}/>
+			<Table headers={headers}/>
 		);
 	}
 }

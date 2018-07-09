@@ -2,13 +2,30 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import Paginator from '../blocks/paginator/paginator';
 import Chartist from '../blocks/chartist/chartist';
+import items from '../items.json';
+
 var headers = ["ID", "Email", "Referrals", "Transactions", "Volume", "Total income", "Total withdrawal", "Balance", "Revenue Share", "Label"];
-var data = [
-	[100, "mail@amil.ru", 1650, 21355, 14, 24, 144, 4, "0.25%", "BestChange"]
-];
+
+var dataItem = [];
 
 class Edit extends Component {
+	getItem = () => {
+		var currentItem = Number(localStorage.getItem('item'));
+		dataItem=[];
+		items.map(item => {
+			if (item.id === currentItem) {
+
+				for(var prop in item) {
+				 dataItem.push(item[prop]);
+				}
+			}
+		});
+	};
+
 	render() {
+
+		this.getItem();
+
 		return (
 			<div>
 				<Link to="/list" className="back">
@@ -24,43 +41,43 @@ class Edit extends Component {
 					</tr>
 					</thead>
 					<tbody>
-					{data.map((row, rowindex) =>
-						<tr key={rowindex}>
-							{<td className="table__prop table__big">{row[0]}</td>}
-							{<td className="table__prop table__big">{row[1]}
+					{
+						<tr>
+							{<td className="table__prop table__big">{dataItem[0]}</td>}
+							{<td className="table__prop table__big">{dataItem[1]}
 								<Link to="edit" className="edit">
 									<span className="icon icon_edit"/>
 									<span className="table__text">Edit</span>
 								</Link>
 							</td>}
-							{<td className="table__prop table__big">{row[2]}
+							{<td className="table__prop table__big">{dataItem[2]}
 								<Link to="info" className="edit">
 									<span className="icon icon_edit"/>
 									<span className="table__text">Info</span>
 								</Link>
 							</td>}
-							{<td className="table__prop table__big">{row[3]}</td>}
-							{<td className="table__prop table__big">{row[4]}</td>}
-							{<td className="table__prop table__big">{row[5]}</td>}
-							{<td className="table__prop table__big">{row[6]}</td>}
-							{<td className="table__prop table__big">{row[7]}</td>}
-							{<td className="table__prop table__big">{row[8]}
-							<Link to="edit" className="edit">
-								<span className="icon icon_edit"/>
-								<span className="table__text">Edit</span>
-							</Link>
+							{<td className="table__prop table__big">{dataItem[3]}</td>}
+							{<td className="table__prop table__big">{dataItem[4]}</td>}
+							{<td className="table__prop table__big">{dataItem[5]}</td>}
+							{<td className="table__prop table__big">{dataItem[6]}</td>}
+							{<td className="table__prop table__big">{dataItem[7]}</td>}
+							{<td className="table__prop table__big">{dataItem[8]}
+								<Link to="edit" className="edit">
+									<span className="icon icon_edit"/>
+									<span className="table__text">Edit</span>
+								</Link>
 							</td>}
-							{<td className="table__prop table__big">{row[9]}
-							<Link to="edit" className="edit">
-								<span className="icon icon_edit"/>
-								<span className="table__text">Edit</span>
-							</Link>
+							{<td className="table__prop table__big">{dataItem[9]}
+								<Link to="edit" className="edit">
+									<span className="icon icon_edit"/>
+									<span className="table__text">Edit</span>
+								</Link>
 							</td>}
-							{<td className="table__empty">{row[10]}
+							{<td className="table__empty">
 								<button type="button" className="btn btn_freeze">Freeze</button>
 								<button type="button" className="btn btn_ban">Ban</button>
 							</td>}
-						</tr>)}
+						</tr>}
 					</tbody>
 				</table>
 				<Chartist/>

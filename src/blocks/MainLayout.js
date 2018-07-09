@@ -11,6 +11,7 @@ import Promo from '../pages/promo';
 import NotFound from '../blocks/notFound';
 
 const MainLayout = () => (
+
 	<Router>
 		<div className="wrapper">
 			<div className="content">
@@ -59,7 +60,7 @@ const MainLayout = () => (
 					<div className="container">
 						<Switch>
 							<Route exact path="/" component={Home}/>
-							<Route path="/list" component={List}/>
+							<Route path="/list" clickEdit={this.clickEdit} component={List}/>
 							<Route path="/transactions" component={Transactions}/>
 							<Route path="/edit" component={Edit}/>
 							<Route path="/info" component={Info}/>

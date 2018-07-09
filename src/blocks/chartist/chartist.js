@@ -4,7 +4,6 @@ import 'chartist/dist/chartist.min.css';
 import 'chartist/dist/chartist.min.js';
 import Download from '../../blocks/download/download';
 import numbers from '../../numbers.json';
-import DayLine from '../../blocks/dayLine';
 
 var data = {
 	series: [{data: []}
@@ -22,10 +21,6 @@ var options = {
 };
 
 var type = 'Line';
-
-const numbersLine = numbers.map((number, index) => {
-	return (<DayLine number={number} key={index}/>);
-});
 
 class Chartist extends Component {
 
@@ -135,7 +130,19 @@ class Chartist extends Component {
 							<th className="table__head table__small table__head_name">Total Webmaster Income</th>
 							<th className="table__head table__small table__head_name">Total Net Income</th>
 						</tr>
-						{numbersLine}
+						{numbers.map((number, index) => {
+							return (<tr key={index}>
+								<td className="table__value table__big">{number.day}</td>
+								<td className="table__value table__big js-value" data-set="Total-Unique-User">{number.TotalUniqueUser}</td>
+								<td className="table__value table__big js-value" data-set="Total-Leads">{number.TotalLeads}</td>
+								<td className="table__value table__big js-value" data-set="Total-Trx">{number.TotalTrx}</td>
+								<td className="table__value table__big js-value" data-set="Total-Volume">{number.TotalVolume}</td>
+								<td className="table__value table__big js-value" data-set="Total-Income">{number.TotalIncome}</td>
+								<td className="table__value table__big js-value" data-set="Total-Webmasters-Income">{number.TotalWebmasters}</td>
+								<td className="table__value table__big js-value" data-set="Total-Webmasters-Income">{number.TotalWebmasterIncome}</td>
+								<td className="table__value table__big js-value" data-set="Total-Net-Income">{number.TotalNetIncome}</td>
+							</tr>);
+						})}
 						</tbody>
 					</table>
 				</div>
