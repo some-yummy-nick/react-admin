@@ -10,6 +10,7 @@ import Info from '../pages/info';
 import Promo from '../pages/promo';
 import NotFound from '../blocks/notFound';
 
+
 const MainLayout = () => (
 
 	<Router>
@@ -48,10 +49,10 @@ const MainLayout = () => (
 								</div>
 							</div>
 							<div className="header__block">
-								<button type="button" className="logout">
+								<NavLink to="/admin" type="button" className="logout">
 									<span className="icon icon_logout" aria-hidden="true"/>
-									<span className="logout__text">Exit</span>
-								</button>
+									<span className="logout__text">Войти</span>
+								</NavLink>
 							</div>
 						</div>
 					</div>

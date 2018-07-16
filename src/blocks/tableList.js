@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Download from '../blocks/download/download';
 import {Link} from 'react-router-dom';
-
+import  _ from "lodash";
 import items from '../items.json';
 
 var headers = ['ID', 'Email', 'Referrals', 'Transactions', 'Volume', 'Total income', 'Total withdrawal', 'Balance', 'Revenue Share', 'Label'];
@@ -10,19 +10,24 @@ class Table extends Component {
 
 	constructor(props) {
 		super(props);
+		this.state={
+			data:this.props.initialData
+		}
 	}
 
 	search = (e) => {
 		e.preventDefault();
 		var needle = e.target.querySelector('input').value.toLowerCase();
+
 		if (!needle) {
 			this.setState({data: this.props.initialData});
 			return;
 		}
-
 		var searchdata = this.props.initialData.filter(function (data) {
-			return data.toString().toLowerCase().indexOf(needle) > -1;
+			return _.values(data).toString().toLowerCase().indexOf(needle) > -1;
 		});
+
+		console.log(searchdata);
 
 		this.setState({data: searchdata});
 	};
@@ -57,7 +62,7 @@ class Table extends Component {
 						</tr>
 						</thead>
 						<tbody>
-						{items.map((item, index) => {
+						{this.state.data.map((item, index) => {
 							return (<tr key={index}>
 								<td className="table__prop table__big">{item.id}</td>
 								<td className="table__prop table__big">{item.email}
@@ -92,7 +97,7 @@ class TableList extends Component {
 
 	render() {
 		return (
-			<Table headers={headers}/>
+			<Table headers={headers} initialData={items}/>
 		);
 	}
 }
